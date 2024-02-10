@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Agriculture</title>
+
+    <style type='text/css'>
+        body {
+            background:linear-gradient(0deg,transparent, rgb(0, 0, 0)), url(https://cdn.pixabay.com/photo/2016/09/21/04/46/barley-field-1684052_1280.jpg); 
+            /* background-image: url('https://cdn.pixabay.com/photo/2016/09/21/04/46/barley-field-1684052_1280.jpg'); */
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: sans-serif;
+            margin-top: 40px;
+        }
+
+        .regform {
+            width: 800px;
+            background-color: rgba(94, 45, 45, 0.8);
+            margin: auto;
+            color: #FFFFFF;
+            padding: 10px 0px 10px 0px;
+            text-align: center;
+            border-radius: 15px 15px 0px 0px;
+        }
+
+        .main-form {
+            width: 800px;
+            margin: auto;
+            background-color: rgb(0, 0, 0, 0.7);
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 20px;
+            color: #FFFFFF;
+        }
+
+        img {
+            max-height: 400px;
+            max-width: 500px;
+            height: auto;
+            width: auto;
+        }
+    </style>
+</head>
+<style>
+    
+    
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: transparent;
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+    
+    li {
+      float: right;
+    }
+    
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    
+    li a:hover:not(.active) {
+      background-color: #111;
+    }
+    
+    .active {
+      background-color: #04AA6D;
+    }
+    </style>
+    <ul>
+        
+        <li><a href="Plant_Detect.html">
+            <button class="glow-on-hover" type="button">Plant_Detect</button></a></li>
+        <li><a href="Pest_Detect.html">
+            <button class="glow-on-hover" type="button">Pest_Detect</button></a></li>
+        
+        
+        
+      </ul>
+<body>
+    <h1 style="text-align: center; font-size: 60px;"><style>
+        span {
+background: radial-gradient(
+circle at 100%,
+#0ca5c0,
+#31a902 50%,
+#000a08 50%,
+#ffffff 50%
+);
+font-weight: 600;
+background-size: 200% auto;
+color: #000;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: animatedTextGradient 1.5s linear infinite;
+}
+
+@keyframes animatedTextGradient {
+to {
+background-position: 200% center;
+}
+}
+
+    </style>
+    
+        <span>
+            <br>
+        SMART AGRICULTURE SYSTEM
+    </span>
+</h1>
+    <br>
+
+    <div style="text-align: center;">
+        <style>
+            .glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #13ddcc, #66045e, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+        </style>
+            
+    </div>
+    <h1 style="padding:30px; 
+
+    font-size: 40px; 
+    font-family: Arial, Helvetica, sans-serif; 
+    background: linear-gradient(to right, #850e9c, 
+            #d81a0c, #a2ca12, #ffffff); 
+    -webkit-text-fill-color: transparent; 
+    -webkit-background-clip: text;
+    background-clip: text; ">
+        <strong>
+            Adafruit IO Data Display
+        </strong>
+    </h1>
+    <div id="dataDisplay"></div>
+  
+    <body>
+      <label class="switch" style="padding:30px; position: absolute; top: 270px;" >
+        <input type="checkbox" id="toggleSwitch" >
+        <span class="slider"></span>
+      </label>
+    
+      
+  
+    <script>
+      async function fetchData() {
+        try {
+          const response = await fetch('/api/data');
+          const data = await response.json();
+          updateDataDisplay(data);
+        } catch (error) {
+          console.error('Error fetching data:', error);
+        }
+      }
+    const toggleSwitch = document.getElementById('toggleSwitch');
+  
+    toggleSwitch.addEventListener('change', function () {
+      if (this.checked) {
+        var value=1
+        console.log(value);
+      } else {
+        var value=0
+        console.log(value);
+      }
+    });
+  
+      function updateDataDisplay(data) {
+        const dataDisplay = document.getElementById('dataDisplay');
+        dataDisplay.innerHTML = `
+          <p>Humidity: ${data.humidity}%</p>
+          <p>Temperature: ${data.temperature}°C</p>
+          <!-- Add more data displays here -->
+        `;
+      }
+  
+      fetchData();
+  
+  
+    </script>
+    <!-- Chatbot icon -->
+<div id="chat-icon" onclick="toggleChat()">
+    <span>
+        
+            <img src="chatbot.png" style="position: absolute; bottom: 10px; right: 10px; height: 50px;">
+       
+    </span>
+</div>
+
+<!-- Chatbot window -->
+<div id="chatbot">
+    <div id="chat-header">
+        <span id="chat-close" onclick="toggleChat()">×</span>
+    </div>
+    <div id="chat-body"></div>
+    <div id="chat-footer">
+        <input type="text" id="user-input" placeholder="Type your message..." onkeydown="handleUserInput(event)">
+        <button id="chatbot-btn" onclick="sendMessage()">Send</button>
+    </div>
+</div>
+<style>
+    /* Style for chatbot icon */
+    
+    
+    #chat-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            cursor: pointer;
+            background-color: transparent;
+            
+            border-radius: 50%;
+            padding: 0px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #chat-icon i {
+            color: #ff0000;
+            
+        }
+
+        /* Style for chatbot window */
+        #chatbot {
+            position: fixed;
+            bottom: 70px;
+            right: 20px;
+            display: none;
+            background-color: #f5f5f5;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            font-family: 'Arial', sans-serif;
+        }
+
+        #chat-header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #chat-close {
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        #chat-body {
+            height: 200px;
+            overflow-y: auto;
+            padding: 10px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        #chat-footer {
+            padding: 10px;
+            display: flex;
+            background-color: #fff;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        #user-input {
+            flex: 1;
+            margin-right: 10px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        #chatbot-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Style for chat messages */
+        .user-message,
+        .chatbot-message {
+            padding: 8px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+        }
+
+        .user-message {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .chatbot-message {
+            background-color: #28a745;
+            color: #fff;
+        }
+</style>
+<script>
+    function toggleChat() {
+        var chatbot = document.getElementById('chatbot');
+        chatbot.style.display = chatbot.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function handleUserInput(event) {
+        if (event.key === 'Enter') {
+            sendMessage();
+        }
+    }
+
+    function sendMessage() {
+        var userInput = document.getElementById('user-input').value;
+        if (userInput.trim() !== '') {
+            appendMessage('user', userInput);
+
+            // Add logic to send the user input to the backend and get the chatbot response
+            // For simplicity, let's simulate a response from the chatbot
+            setTimeout(function () {
+                appendMessage('chatbot', 'This is a sample response from the chatbot.');
+            }, 500);
+
+            document.getElementById('user-input').value = '';
+        }
+    }
+
+    function appendMessage(sender, message) {
+        var chatBody = document.getElementById('chat-body');
+        var messageElement = document.createElement('div');
+        messageElement.className = sender === 'user' ? 'user-message' : 'chatbot-message';
+        messageElement.textContent = message;
+        chatBody.appendChild(messageElement);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+</script>
+
+</body>
+</html>
