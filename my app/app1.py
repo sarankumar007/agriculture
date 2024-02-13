@@ -1,10 +1,12 @@
 import os
-from flask import Flask, request, render_template
+from flask import Flask, render_template, request, redirect,jsonify,url_for,redirect,session
 from werkzeug.utils import secure_filename
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import load_img, img_to_array
 from tensorflow.keras.applications.vgg19 import preprocess_input
 import numpy as np
+
+from chatModel import ask_question_with_sources
 
 UPLOAD_FOLDER = './my app/static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
@@ -30,7 +32,7 @@ def prediction(path):
 
 @app.route('/')
 def home():
-    return render_template('Plant_Detect.html')
+    return render_template('home.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -45,6 +47,16 @@ def predict():
         return render_template('Plant_Detect.html', org_img_name=filename, prediction=pred)
     else:
         return "Invalid file format"
+
+@app.route("/chat",methods=['POST'])
+def  chat():
+    try:
+        text=request.get_json().get("message")
+        response=ask_question_with_sources(text)
+        message={"answer":response}
+        return jsonify(message)
+    except Exception as e:
+        return jsonify({"answer": {str(e)}})
 
 if __name__ == '__main__':
     app.run(debug=True)
