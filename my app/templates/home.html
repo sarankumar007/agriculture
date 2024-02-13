@@ -1,59 +1,25 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-
-    <title>Agriculture</title>
-
-    <style type='text/css'>
-        body {
-            background:linear-gradient(0deg,transparent, rgb(0, 0, 0)), url(https://cdn.pixabay.com/photo/2016/09/21/04/46/barley-field-1684052_1280.jpg); 
-            /* background-image: url('https://cdn.pixabay.com/photo/2016/09/21/04/46/barley-field-1684052_1280.jpg'); */
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-            font-family: sans-serif;
-            margin-top: 40px;
-        }
-
-        .regform {
-            width: 800px;
-            background-color: rgba(94, 45, 45, 0.8);
-            margin: auto;
-            color: #FFFFFF;
-            padding: 10px 0px 10px 0px;
-            text-align: center;
-            border-radius: 15px 15px 0px 0px;
-        }
-
-        .main-form {
-            width: 800px;
-            margin: auto;
-            background-color: rgb(0, 0, 0, 0.7);
-            padding-left: 50px;
-            padding-right: 50px;
-            padding-bottom: 20px;
-            color: #FFFFFF;
-        }
-
-        img {
-            max-height: 400px;
-            max-width: 500px;
-            height: auto;
-            width: auto;
-        }
-    </style>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/chatStyle.css') }}">
+    <style>
+body {font-family: "Lato", sans-serif; background: black;}
+.mySlides {display: none}
+</style>
 </head>
-<style>
-    
-    
+
+<body>
+  <style>
+
+
     ul {
+      color: #00ffd5;
       list-style-type: none;
       margin: 0;
       padding: 0;
@@ -63,11 +29,11 @@
       top: 0;
       width: 100%;
     }
-    
+
     li {
       float: right;
     }
-    
+
     li a {
       display: block;
       color: white;
@@ -75,61 +41,15 @@
       padding: 14px 16px;
       text-decoration: none;
     }
-    
+
     li a:hover:not(.active) {
       background-color: #111;
     }
-    
+
     .active {
       background-color: #04AA6D;
     }
-    </style>
-    <ul>
-        
-        <li><a href="Plant_Detect.html">
-            <button class="glow-on-hover" type="button">Plant_Detect</button></a></li>
-        <li><a href="Pest_Detect.html">
-            <button class="glow-on-hover" type="button">Pest_Detect</button></a></li>
-        
-        
-        
-      </ul>
-<body>
-    <h1 style="text-align: center; font-size: 60px;"><style>
-        span {
-background: radial-gradient(
-circle at 100%,
-#0ca5c0,
-#31a902 50%,
-#000a08 50%,
-#ffffff 50%
-);
-font-weight: 600;
-background-size: 200% auto;
-color: #000;
-background-clip: text;
--webkit-text-fill-color: transparent;
-animation: animatedTextGradient 1.5s linear infinite;
-}
-
-@keyframes animatedTextGradient {
-to {
-background-position: 200% center;
-}
-}
-
-    </style>
-    
-        <span>
-            <br>
-        SMART AGRICULTURE SYSTEM
-    </span>
-</h1>
-    <br>
-
-    <div style="text-align: center;">
-        <style>
-            .glow-on-hover {
+    .glow-on-hover {
     width: 220px;
     height: 50px;
     border: none;
@@ -181,40 +101,150 @@ background-position: 200% center;
     left: 0;
     top: 0;
     border-radius: 10px;
-}
 
+}
 @keyframes glowing {
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
 }
 
-        </style>
-            
-    </div>
-    <h1 style="padding:30px; 
+    </style>
+<!-- Navbar -->
+<div class="w3-top" style="background: #000000; height: 90px;" >
+  <div class="w3-bar w3-black w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu" >
+      <i class="fa fa-bars">
 
-    font-size: 40px; 
-    font-family: Arial, Helvetica, sans-serif; 
-    background: linear-gradient(to right, #850e9c, 
-            #d81a0c, #a2ca12, #ffffff); 
-    -webkit-text-fill-color: transparent; 
-    -webkit-background-clip: text;
-    background-clip: text; ">
-        <strong>
-            Adafruit IO Data Display
-        </strong>
-    </h1>
+      </i>
+    </a>
+
+
+      <ul>
+
+          <li><a href="Plant_Detect.html">
+              <button class="glow-on-hover" type="button">Plant_Detect</button></a></li>
+          <li><a href="Pest_Detect.html">
+              <button class="glow-on-hover" type="button">Pest_Detect</button></a></li>
+
+          <li style="float: left;">
+
+              <div id="google_translate_element"></div>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+        function googleTranslateElementInit(){
+            new google.translate.TranslateElement(
+                {googleLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+
+
+
+    </script>
+
+          </li>
+
+        </ul>
+    <!-- <a href="#tour" class="w3-bar-item w3-button w3-padding-large w3-hide-small">TOUR</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a> -->
+
+    </div>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:100%;margin-top:46px; background: rgba(0, 0, 0, 0);">
+
+  <!-- Automatic Slideshow Images -->
+  <div class="mySlides w3-display-container w3-center" style="background: linear-gradient(rgb(0, 0, 0),transparent,black);">
+    <img src="b.jpg" style="width:100%; background: black; opacity: 0.4;" >
+    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small" style="position: absolute; margin-top: 0%; top: 0%; max-width: 100%; text-align: center;" >
+        <style>
+            .im h1{
+                max-width: 100%;
+                display: inline;
+                text-align: center;
+                font-size: 60px;
+    background: radial-gradient(
+    circle at 100%,
+    #ec2004,
+    #6b0404 50%,
+    #75ce10 75%,
+    #c03b06 75%
+    );
+    font-weight: 600;
+    background-size: 200% auto;
+    color: #000;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animatedTextGradient 1.5s linear infinite;
+    }
+
+    .im p{
+        color: red;
+        display: inline;
+        font-size: 55px;
+        font-weight: 900    ;
+    }
+
+    @keyframes animatedTextGradient {
+    to {
+    background-position: 200% center;
+    }
+    }
+
+        </style>
+        <div class="im" style="width: 2000px; left: 0px;">
+        <h1 >SMART AGRO <p id="blink" style="background: red;background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: animatedTextGradient 1.5s linear infinite;">
+              SURVEILLANCE
+          </p>
+
+    </h1>
+    <!-- <p id="blink">
+        SURVEILLANCE
+    </p> -->
+    <script type="text/javascript">
+      var blink = document.getElementById('blink');
+      setInterval(function() {
+          blink.style.opacity = (blink.style.opacity == 0 ? 1 : 0);
+      }, 600);
+  </script>
+
+</div>
+<br>
+<br>
+<h1 style="padding:15px;
+border-width:3px; border-style:solid; border-color:#9dff00;width:fit-content; width:-webkit-fit-content; width:-moz-fit-content;
+border-radius: 20px;
+height: 500px;
+text-align: left;
+font-size: 40px;
+font-family: Arial, Helvetica, sans-serif;
+background: linear-gradient(to right, #850e9c,
+        #d81a0c, #a2ca12, #ffffff);
+-webkit-text-fill-color: transparent;
+-webkit-background-clip: text;
+background-clip: text; ">
+    <strong>
+
+        Adafruit IO Data Display
+    </strong>
     <div id="dataDisplay"></div>
-  
+
     <body>
-      <label class="switch" style="padding:30px; position: absolute; top: 270px;" >
+      <label class="switch" style="padding:30px; position: absolute; top: 200px;" >
         <input type="checkbox" id="toggleSwitch" >
         <span class="slider"></span>
       </label>
-    
-      
-  
+
+
+
     <script>
       async function fetchData() {
         try {
@@ -226,7 +256,7 @@ background-position: 200% center;
         }
       }
     const toggleSwitch = document.getElementById('toggleSwitch');
-  
+
     toggleSwitch.addEventListener('change', function () {
       if (this.checked) {
         var value=1
@@ -236,7 +266,7 @@ background-position: 200% center;
         console.log(value);
       }
     });
-  
+
       function updateDataDisplay(data) {
         const dataDisplay = document.getElementById('dataDisplay');
         dataDisplay.innerHTML = `
@@ -245,168 +275,234 @@ background-position: 200% center;
           <!-- Add more data displays here -->
         `;
       }
-  
+
       fetchData();
-  
-  
+
+
     </script>
-    <!-- Chatbot icon -->
-<div id="chat-icon" onclick="toggleChat()">
-    <span>
-        
-            <img src="chatbot.png" style="position: absolute; bottom: 10px; right: 10px; height: 50px;">
-       
-    </span>
+    </h1>
+
+    </div>
+  </div>
+
+
+  <!-- The Band Section -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:100% ; background:rgb(0, 0, 0); color: white;" id="band">
+    <h2 class="w3-wide">THE BAND</h2>
+    <p class="w3-opacity"><i>We love music</i></p>
+    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <div class="w3-row w3-padding-32">
+    </div>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p></p>
+
+      </div>
+      <div class="w3-third">
+        <p>Name</p>
+        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p></p>
+
+      </div>
+
+    </div>
+      <div class="w3-third">
+        <p>Name</p>
+        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Name</p>
+        <img src="/w3images/bandmember.jpg" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Name</p>
+        <img src="/w3images/bandmember.jpg" class="w3-round" alt="Random Name" style="width:60%">
+      </div>
+
+
+  </div>
+
+
+
+<!-- End Page Content -->
+</div>
+ <div class="container">
+    <div class="chatbox">
+        <div class="chatbox__support">
+            <div class="chatbox__header">
+                <div class="chatbox__image--header">
+                    <img src="/static/img/agriicon.png" alt="image" height="50px" width="50px">
+                </div>
+                <div class="chatbox__content--header">
+                    <h4 class="chatbox__heading--header">Smart Agro Chatbot</h4>
+                    <p class="chatbox__description--header">Get answers to your queries in any language</p>
+                </div>
+            </div>
+            <div class="chatbox__messages">
+                <div></div>
+            </div>
+            <div class="chatbox__footer">
+               <div id="infoBox">Say something</div>
+              <button id="voiceButton"><i class="fa fa-microphone" style="font-size:24px"></i></button>
+                <input id="recognizedText" type="text" placeholder="Write a message...">
+                <button class="chatbox__send--footer send__button">Send</button>
+            </div>
+        </div>
+        <div class="chatbox__button">
+            <button><img src="/static/img/icon.jpg" /></button>
+        </div>
+    </div>
 </div>
 
-<!-- Chatbot window -->
-<div id="chatbot">
-    <div id="chat-header">
-        <span id="chat-close" onclick="toggleChat()">×</span>
-    </div>
-    <div id="chat-body"></div>
-    <div id="chat-footer">
-        <input type="text" id="user-input" placeholder="Type your message..." onkeydown="handleUserInput(event)">
-        <button id="chatbot-btn" onclick="sendMessage()">Send</button>
-    </div>
-</div>
-<style>
-    /* Style for chatbot icon */
-    
-    
-    #chat-icon {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            cursor: pointer;
-            background-color: transparent;
-            
-            border-radius: 50%;
-            padding: 0px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    <script>
+        $SCRIPT_ROOT = "http://127.0.0.1:5000";
+    </script>
+    <script >class  Chatbox{
+    constructor(){
+        this.args={
+        openButton: document.querySelector('.chatbox__button'),
+        chatBox: document.querySelector('.chatbox__support'),
+        sendButton:   document.querySelector('.send__button')
+
         }
 
-        #chat-icon i {
-            color: #ff0000;
-            
+        this.state=false;
+        this.messages=[];
+
+
+    }
+
+    display(){
+        const {openButton,chatBox,sendButton}=  this.args;
+
+        openButton.addEventListener('click',()=>this.toggleState(chatBox))
+        sendButton.addEventListener('click',()=>this.onSendButton(chatBox))
+
+        const  node=chatBox.querySelector('input');
+        node.addEventListener("keyup",({key})=>{
+            if( key=="Enter"){
+                this.onSendButton(chatBox)
+            }
+    })
+}
+
+    toggleState(chatBox){
+        this.state=!this.state;
+        if(this.state){
+            chatBox.classList.add('chatbox--active')
+            var html='<a href="https://example.com" class="start-buttons">Visit Example.com</a>';
+            const chatmessage = chatbox.querySelector('.chatbox__messages');
+        chatmessage.innerHTML = html;
+        }
+        else{
+            chatBox.classList.remove('chatbox--active')
         }
 
-        /* Style for chatbot window */
-        #chatbot {
-            position: fixed;
-            bottom: 70px;
-            right: 20px;
-            display: none;
-            background-color: #f5f5f5;
-            border-radius: 10px;
-            width: 300px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            font-family: 'Arial', sans-serif;
-        }
+    }
 
-        #chat-header {
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    onSendButton(chatBox){
+    var textField=chatBox.querySelector('input');
+    let text1=textField.value
+    if(text1==""){
+    return;
+    }
 
-        #chat-close {
-            cursor: pointer;
-            font-size: 18px;
-        }
+    let msg1={name:"User",message:text1}
+    this.messages.push(msg1);
 
-        #chat-body {
-            height: 200px;
-            overflow-y: auto;
-            padding: 10px;
-            background-color: #fff;
-            border-bottom: 1px solid #ddd;
-        }
+    fetch($SCRIPT_ROOT + '/chat',{
+    method: 'POST',
+    body: JSON.stringify({message:text1}),
+    mode:'cors',
+    headers:{
+    'Content-Type': 'application/json'
+    },
 
-        #chat-footer {
-            padding: 10px;
-            display: flex;
-            background-color: #fff;
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-        }
+    })
+    .then(r=>r.json())
+    .then(r=>{
+    let msg2={name:"Sam",message: r.answer};
+    this.messages.push(msg2);
+    this.updateChatText(chatBox)
+    textField.value=''
+    }). catch((error)=>{
+    console.error('Error:',error);
+    this.updateChatText(chatBox)
+    textField.value=''
 
-        #user-input {
-            flex: 1;
-            margin-right: 10px;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
+    });
 
-        #chatbot-btn {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 8px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
+    }
 
-        /* Style for chat messages */
-        .user-message,
-        .chatbot-message {
-            padding: 8px;
-            margin-bottom: 8px;
-            border-radius: 5px;
-        }
 
-        .user-message {
-            background-color: #007bff;
-            color: #fff;
-        }
 
-        .chatbot-message {
-            background-color: #28a745;
-            color: #fff;
+    updateChatText(chatBox){
+    var html='';
+    this.messages.slice().reverse().forEach(function(item,){
+        if(item.name=="Sam"){
+        const urlRegex = /(https?:\/\/[^\s]+)/g;
+        const messageWithLink = item.message.replace(urlRegex, '<a href="$1" target="_blank">$1</a>');
+        html+='<div class="messages__item messages__item--visitor">' + messageWithLink + '</div>'
         }
-</style>
+        else{
+        html+='<div class="messages__item messages__item--operator">' + item.message +'</div>'
+        }
+    });
+
+    const chatmessage=chatBox.querySelector('.chatbox__messages');
+    chatmessage.innerHTML=html;
+    chatmessage.scrollTop = chatmessage.scrollHeight;
+
+    }
+
+   }
+
+ const chatbox=new Chatbox();
+ chatbox.display();</script>
+
+<!-- Image of location/map -->
+
+
+
+
 <script>
-    function toggleChat() {
-        var chatbot = document.getElementById('chatbot');
-        chatbot.style.display = chatbot.style.display === 'none' ? 'block' : 'none';
-    }
+// Automatic Slideshow - change image every 4 seconds
+var myIndex = 0;
+carousel();
 
-    function handleUserInput(event) {
-        if (event.key === 'Enter') {
-            sendMessage();
-        }
-    }
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 4000);
+}
 
-    function sendMessage() {
-        var userInput = document.getElementById('user-input').value;
-        if (userInput.trim() !== '') {
-            appendMessage('user', userInput);
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
 
-            // Add logic to send the user input to the backend and get the chatbot response
-            // For simplicity, let's simulate a response from the chatbot
-            setTimeout(function () {
-                appendMessage('chatbot', 'This is a sample response from the chatbot.');
-            }, 500);
-
-            document.getElementById('user-input').value = '';
-        }
-    }
-
-    function appendMessage(sender, message) {
-        var chatBody = document.getElementById('chat-body');
-        var messageElement = document.createElement('div');
-        messageElement.className = sender === 'user' ? 'user-message' : 'chatbot-message';
-        messageElement.textContent = message;
-        chatBody.appendChild(messageElement);
-        chatBody.scrollTop = chatBody.scrollHeight;
-    }
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
 </script>
 
 </body>
